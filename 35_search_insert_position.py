@@ -12,4 +12,11 @@ class Solution(object):
                 
                 continue
         return len(nums)
+    def searchInsert2(self, nums, target):
+        """
+        :type nums: List[int]
+        :type target: int
+        :rtype: int
+        """
+        return len(list(x for x in nums if x<target))
     

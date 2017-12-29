@@ -39,3 +39,25 @@ class Solution(object):
         	else:
         		c_end=c_mid-1
         return False
+#*******************************************************
+    def searchMatrix(self, matrix, target):
+        """
+        :type matrix: List[List[int]]
+        :type target: int
+        :rtype: bool
+        """
+        #134 tests 66ms
+        #57.04%
+        if len(matrix)==0:
+            return False
+        m=len(matrix)
+        n=len(matrix[0])
+        for i in range(m):
+            for j in range(n):
+                if matrix[m-1-i][j]==target:
+                    return True
+                elif matrix[m-1-i][j]>target:
+                    break
+                else:
+                    continue
+        return False

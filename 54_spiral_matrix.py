@@ -10,7 +10,7 @@ class Solution(object):
         
         m=len(matrix)
         n=len(matrix[0])
-        layer=(min(m,n)+1)/2
+        layer=(min(m,n)+1)//2
         for i in range(layer):
             for j in range(i,n-i):
                 res.append(matrix[i][j])

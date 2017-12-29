@@ -16,4 +16,19 @@ class Solution(object):
             else:
                 r-=1
         return max_c
-        
+    #*************************************
+    def maxArea(self, height):
+        """
+        :type height: List[int]
+        :rtype: int
+        """
+        i,j=0,len(height)-1
+        v=(j-i) * min(height[i],height[j])
+        while i<j:
+            if height[i]<=height[j]:
+                i+=1
+                v=max(v,(j-i)*min(height[i],height[j]) )
+            else:
+                j-=1
+                v=max(v,(j-i)*min(height[i],height[j]) )
+        return v
